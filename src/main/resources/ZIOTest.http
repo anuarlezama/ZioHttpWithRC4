@@ -17,3 +17,23 @@ Accept: text/plain
 
 GET http://localhost:8080/another?name=Anuar%20Lezama
 Accept: text/plain
+
+###
+
+GET http://localhost:8080/users
+Accept: application/json
+
+###
+
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "name": "Daniela Charabati",
+  "age": 28
+}
+
+###
+
+GET http://localhost:8080/users/dc135e25-06a1-47fb-b919-aa7abf9f5d0a
+Accept: application/json

@@ -9,7 +9,7 @@ import zio.stream.ZStream
 
 import java.util.concurrent.TimeUnit
 
-object Backend extends ZIOAppDefault {
+object BackendDemo extends ZIOAppDefault {
 
   final case class  ExampleResponse (name: String, age: Int)
 
@@ -35,12 +35,12 @@ object Backend extends ZIOAppDefault {
   private val textRoute =
     Method.GET / "fruits" / "a" -> handler(ZIO.succeed(Response.text("Hello World!")))
 
-  val streamRoute =
+  private val streamRoute =
     Method.GET / "stream" -> handler(http.Response(
       status = Status.Ok, body = Body.fromStream(ZStream.fromChunk(message))
     ))
 
-  val zHandlerRoute =
+  private val zHandlerRoute =
     Method.GET / "zhandler" -> handler(zioHandler).mapError {
       error => http.Response(
         status = Status.InternalServerError, body = Body.fromString(error, Charsets.Http)
