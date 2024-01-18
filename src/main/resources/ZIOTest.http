@@ -1,0 +1,19 @@
+GET http://localhost:8080/fruits/a
+Accept: text/plain
+
+###
+
+GET http://localhost:8080/stream
+Accept: text/plain
+Authorization: Basic anuar password
+
+###
+
+GET http://localhost:8080/zhandler
+Accept: text/plain
+
+###
+
+
+GET http://localhost:8080/another?name=Anuar%20Lezama
+Accept: text/plain
